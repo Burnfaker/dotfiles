@@ -1,5 +1,5 @@
 ### Dotfiles for phyOS
-This is the fork from https://github.com/FT-Labs/phyOS-dwm/blob.
+This is the fork from https://github.com/FT-Labs/dotfiles
 This fork has another .zshrc from OhMyZSH with some feutures.
 
 
