@@ -20,6 +20,12 @@ alias \
 	ccat="highlight --out-format=ansi"
 
 alias \
+	ll="exa -lah" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+
+alias \
 	ka="killall" \
 	g="git" \
 	f="$FILE" \
