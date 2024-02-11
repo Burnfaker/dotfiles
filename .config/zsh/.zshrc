@@ -60,32 +60,32 @@ setopt SHARE_HISTORY
 [ -f "$ZSHCFG/aliasrc" ] && source "$ZSHCFG/aliasrc"
 
 # Note that in different distro or installation way below source files need to be changed, they are usually in ~/.zsh/
-source "$ZSHCFG/OMZ/oh-my-zsh.sh"
-zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
-zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview \
-  '[[ $group == "[process ID]" ]] && ps --pid=$word -o cmd --no-headers -w -w'
-zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:3:wrap
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath' # remember to use single quote here!!!
-zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
-zstyle ':fzf-tab:*' single-group color header
-zstyle -d ':completion:*' format
-zstyle ':completion:*:descriptions' format '[%d]'
-zstyle ':completion:*:phint:*' sort false
-#zstyle ':fzf-tab:complete:phint:argument-rest' fzf-flags  --no-sort --preview-window=down:60%:wrap --with-nth 1
-zstyle ':fzf-tab:complete:phint:argument-rest' fzf-flags  --no-sort --preview-window=down:wrap --with-nth 1
-zstyle ':fzf-tab:complete:phint:argument-rest' fzf-change-desc "swap"
-#zstyle ':fzf-tab:complete:phint:argument-rest' fzf-preview 'echo Cmd: ${${(Q)desc#*--}::-2}'
-zstyle ':fzf-tab:complete:phint:argument-rest' fzf-preview 'echo Cmd: ${word}; grep "" 2>/dev/null $(which ${word#*sudo\ })'
-
+#source "$ZSHCFG/OMZ/oh-my-zsh.sh"
+#zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+#zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview \
+#  '[[ $group == "[process ID]" ]] && ps --pid=$word -o cmd --no-headers -w -w'
+#zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:3:wrap
+#zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath' # remember to use single quote here!!!
+#zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
+#zstyle ':fzf-tab:*' single-group color header
+#zstyle -d ':completion:*' format
+#zstyle ':completion:*:descriptions' format '[%d]'
+#zstyle ':completion:*:phint:*' sort false
+##zstyle ':fzf-tab:complete:phint:argument-rest' fzf-flags  --no-sort --preview-window=down:60%:wrap --with-nth 1
+#zstyle ':fzf-tab:complete:phint:argument-rest' fzf-flags  --no-sort --preview-window=down:wrap --with-nth 1
+#zstyle ':fzf-tab:complete:phint:argument-rest' fzf-change-desc "swap"
+##zstyle ':fzf-tab:complete:phint:argument-rest' fzf-preview 'echo Cmd: ${${(Q)desc#*--}::-2}'
+#zstyle ':fzf-tab:complete:phint:argument-rest' fzf-preview 'echo Cmd: ${word}; grep "" 2>/dev/null $(which ${word#*sudo\ })'
+#
 
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
 export GPG_TTY=$(tty)
-if [ ! -z $BM_DIR ]; then
-    cd -P $BM_DIR &&
-    export BM_DIR=""
-fi
+#if [ ! -z $BM_DIR ]; then
+#    cd -P $BM_DIR &&
+#    export BM_DIR=""
+#fi
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
@@ -120,3 +120,4 @@ export LESS_TERMCAP_me=$(tput sgr0)
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
